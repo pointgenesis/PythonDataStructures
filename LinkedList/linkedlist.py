@@ -47,7 +47,7 @@ class LinkedList(object):
         :param data: the data value to insert into the linked list
         """
         self.size = self.size + 1
-        new_node = node(data)
+        new_node = Node(data)
         current_node = self.head
 
         while current_node is not None:
