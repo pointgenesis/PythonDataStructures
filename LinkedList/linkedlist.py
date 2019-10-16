@@ -64,14 +64,16 @@ class LinkedList(object):
         current_node = self.head
         previous_node = None
 
-        while current_node != data:
+        while current_node.data != data:
             previous_node = current_node
             current_node = current_node.next_node
 
         if previous_node is None:
             self.head = current_node.next_node
         else:
-            previous_node = current_node.next_node
+            previous_node.next_node = current_node.next_node
+
+        current_node = None
 
 
     def length(self):
@@ -102,5 +104,10 @@ list.insert_at_tail(43)
 list.insert_at_tail(99)
 
 list.length()
+list.traverse()
 
+print("="*25)
+
+list.remove(-55)
+list.length()
 list.traverse()
