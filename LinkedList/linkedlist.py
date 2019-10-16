@@ -50,12 +50,32 @@ class LinkedList(object):
         new_node = Node(data)
         current_node = self.head
 
-        while current_node is not None:
+        while current_node.next_node is not None:
             current_node = current_node.next_node
 
-        current_node = new_node
+        current_node.next_node = new_node
 
-    def size(self):
+    def remove(self, data):
+        if self.head is None:
+            return
+
+        self.size = self.size - 1
+
+        current_node = self.head
+        previous_node = None
+
+        while current_node != data:
+            previous_node = current_node
+            current_node = current_node.next_node
+
+        if previous_node is None:
+            self.head = current_node.next_node
+        else:
+            previous_node = current_node.next_node
+
+
+    def length(self):
+        print("current list size %d" % self.size)
         return self.size
 
 
@@ -72,5 +92,15 @@ list.insert_at_head(100)
 list.insert_at_head(2)
 list.insert_at_head(-55)
 list.insert_at_head(3454)
+
+list.length()
+list.traverse()
+
+print("="*25)
+
+list.insert_at_tail(43)
+list.insert_at_tail(99)
+
+list.length()
 
 list.traverse()
