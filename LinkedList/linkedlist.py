@@ -88,7 +88,7 @@ class LinkedList(object):
             print("current_node.data: %d" % current_node.data)
             current_node = current_node.next_node
 
-
+################ Testing Area ####################
 list = LinkedList()
 list.insert_at_head(100)
 list.insert_at_head(2)
